@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_inquiries",
+  "info": {
+    "singularName": "customer-inquiry",
+    "pluralName": "customer-inquiries",
+    "displayName": "customer Inquiry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "message": {
+      "type": "text"
+    },
+    "car": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::car.car",
+      "inversedBy": "customer_inquiry"
+    }
+  }
+}

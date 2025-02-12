@@ -1,0 +1,130 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "mileage": {
+      "type": "biginteger"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "availability": {
+      "type": "boolean",
+      "default": true
+    },
+    "bodytype": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "Used"
+      ]
+    },
+    "drivetype": {
+      "type": "enumeration",
+      "enum": [
+        "Right",
+        "Left"
+      ]
+    },
+    "fueltype": {
+      "type": "enumeration",
+      "enum": [
+        "Petrol",
+        "Diesel"
+      ]
+    },
+    "gearbox": {
+      "type": "enumeration",
+      "enum": [
+        "Automatic",
+        "Manuel"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "categoryname"
+    },
+    "aircon": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "customer_inquiry": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer-inquiry.customer-inquiry",
+      "mappedBy": "car"
+    },
+    "dealer_info": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dealer-info.dealer-info",
+      "inversedBy": "cars"
+    },
+    "location": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "make": {
+      "type": "enumeration",
+      "enum": [
+        "Toyota Harrier ",
+        "Mitsubishi Outlander",
+        "Subaru Forester",
+        "Toyota Hilux",
+        "Toyota Raum",
+        "Toyota Vitz",
+        "Toyota Rush",
+        "Audi A4"
+      ]
+    },
+    "video": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

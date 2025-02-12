@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dealer_infos",
+  "info": {
+    "singularName": "dealer-info",
+    "pluralName": "dealer-infos",
+    "displayName": "Dealer Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dealerName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phonenumber": {
+      "type": "integer"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::car.car",
+      "mappedBy": "dealer_info"
+    }
+  }
+}
